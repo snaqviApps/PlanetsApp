@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PlanetsDemo</string>
+    <string name="planetImage">Planet Image</string>
 </resources>
