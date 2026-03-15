@@ -5,5 +5,6 @@ data class Planets(
     val name: String,
     val velocity: String,
     val distance: String,
+    val image: String,
     val description: String,
 )
