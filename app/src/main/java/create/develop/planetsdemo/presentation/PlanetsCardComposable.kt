@@ -9,14 +9,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -35,67 +36,66 @@ fun PlanetsCard(
     listOfPlanets: List<Planet>,
     p: Int
 ) {
-    Card(
-        modifier
-            .padding(8.dp)
-            .clip(CircleShape)
-            .fillMaxSize()
-    ) {
-        Row(
-            modifier = Modifier
-                .padding(top = 16.dp, start = 12.dp, bottom = 8.dp, end = 8.dp)
+        Card(
+            elevation = CardDefaults.elevatedCardElevation(20.dp),
+            modifier = modifier.padding(10.dp))
+        {
+            Row(
+                modifier = modifier
+                    .padding(top = 16.dp, start = 12.dp, bottom = 8.dp, end = 8.dp)
+                    .clip(RectangleShape)
+                    .fillMaxSize()
                 .align(alignment = Alignment.Start)
-        ) {
-            Column {
-                FetchImage(listOfPlanets[p].image)
-                Spacer(Modifier.height(8.dp))
-            }
-
-            Spacer(Modifier.width(12.dp))
-            Column(
             ) {
-                Text(
-                    text = listOfPlanets[p].name,
-                    fontWeight = FontWeight.SemiBold,
-                    color = Color(0xFF176757),
-                    fontSize = 16.sp,
-                    modifier = Modifier.background(Color(0xFFE6E9FD))
-                )
-
-                Spacer(Modifier.width(8.dp))
                 Column {
+                    FetchImage(listOfPlanets[p].image)
+                    Spacer(Modifier.height(8.dp))
+                }
+
+                Spacer(Modifier.width(12.dp))
+                Column(
+                ) {
+                    Text(
+                        text = listOfPlanets[p].name,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFF176757),
+                        fontSize = 16.sp,
+                        modifier = Modifier.background(Color(0xFFE6E9FD))
+                    )
+
+                    Spacer(Modifier.width(8.dp))
                     Column {
-                        Row {
-                            Text(
-                                text = "Distance:   ${listOfPlanets[p].distance} MKm",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                                textAlign = TextAlign.Center,
-                                color = Color(0xFF7B123C),
-                                modifier = Modifier
-                                    .background(Color(0xFFE6E9FD))
-                                    .padding(4.dp)
-                            )
-                        }
-                        Row(
-                        ) {
-                            Text(
-                                text = "Velocity:   ${listOfPlanets[p].velocity.toInt() * 3600} Km/hr ",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                                textAlign = TextAlign.Center,
-                                color = Color(0xFF7B123C),
-                                modifier = Modifier
-                                    .background(Color(0xFFE6E9FD))
-                                    .padding(4.dp)
-                            )
+                        Column {
+                            Row {
+                                Text(
+                                    text = "Distance:   ${listOfPlanets[p].distance} MKm",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Center,
+                                    color = Color(0xFF7B123C),
+                                    modifier = Modifier
+                                        .background(Color(0xFFE6E9FD))
+                                        .padding(4.dp)
+                                )
+                            }
+                            Row(
+                            ) {
+                                Text(
+                                    text = "Velocity:   ${listOfPlanets[p].velocity.toInt() * 3600} Km/hr ",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Center,
+                                    color = Color(0xFF7B123C),
+                                    modifier = Modifier
+                                        .background(Color(0xFFE6E9FD))
+                                        .padding(4.dp)
+                                )
+                            }
                         }
                     }
                 }
-
             }
         }
-    }
 }
 
 
@@ -111,7 +111,7 @@ private fun FetchImage(image: String) {
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PlanetsCardPreview() {
     PlanetsDemoTheme() {
