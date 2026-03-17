@@ -127,17 +127,9 @@ fun PlanetsCardPreview() {
                     image = "https://space-facts.com/wp-content/uploads/mercury-transparent.png",
                     description = "Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016.",
 
-                    ),
-                Planet(
-                    position = "2",
-                    name = "Venus",
-                    velocity = "35",
-                    distance = "108",
-                    image = "https://space-facts.com/wp-content/uploads/venus-transparent.png",
-                    description = "Venus is the second planet from the Sun and is the second brightest object in the night sky after the Moon. Named after the Roman goddess of love and beauty, Venus is the second largest terrestrial planet and is sometimes referred to as the Earth’s sister planet due the their similar size and mass. The surface of the planet is obscured by an opaque layer of clouds made up of sulphuric acid."
-                )
+                    )
             ),
-            planetCount = 1
+            1
         )
     }
 }

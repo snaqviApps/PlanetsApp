@@ -34,16 +34,16 @@ class FetchPlanetsService : FetchPlanets {
                 Planet(
                     position = "4",
                     name = "Mars",
-                    distance = "24",
-                    velocity = "227",
+                    velocity = "24",
+                    distance = "227",
                     image = "https://space-facts.com/wp-content/uploads/mars-transparent.png",
                     description = "Mars is the fourth planet from the Sun and is the second smallest planet in the solar system. Named after the Roman god of war, Mars is also often described as the “Red Planet” due to its reddish appearance. Mars is a terrestrial planet with a thin atmosphere composed primarily of carbon dioxide."
                 ),
                 Planet(
                     position = "5",
                     name = "Jupiter",
-                    velocity = "778",
-                    distance = "13",
+                    velocity = "13",
+                    distance = "778",
                     image = "https://space-facts.com/wp-content/uploads/jupiter-transparent.png",
                     description = "The planet Jupiter is the fifth planet out from the Sun, and is two and a half times more massive than all the other planets in the solar system combined. It is made primarily of gases and is therefore known as a gas giant."
                 ),
