@@ -1,3 +1,5 @@
 # README.md
-this is initial output for planets' list
-![Screenshot_20260316_101537.png](../../Desktop/Screenshot_20260316_101537.png)
+# Planets' list
+
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/ffa63025-721f-45d0-b893-90e8453a663f" />
+
