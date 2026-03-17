@@ -1,5 +1,6 @@
 # README.md
 # Planets' list
 
-<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/ffa63025-721f-45d0-b893-90e8453a663f" />
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/47422fb6-509d-4948-b92d-7ce35b387f28" />
+
 
