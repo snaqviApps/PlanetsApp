@@ -34,68 +34,69 @@ import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
 fun PlanetsCard(
     modifier: Modifier,
     listOfPlanets: List<Planet>,
-    p: Int
+    planetCount: Int
 ) {
-        Card(
-            elevation = CardDefaults.elevatedCardElevation(20.dp),
-            modifier = modifier.padding(10.dp))
-        {
-            Row(
-                modifier = modifier
-                    .padding(top = 16.dp, start = 12.dp, bottom = 8.dp, end = 8.dp)
-                    .clip(RectangleShape)
-                    .fillMaxSize()
+    Card(
+        elevation = CardDefaults.elevatedCardElevation(20.dp),
+        modifier = modifier.padding(10.dp)
+    )
+    {
+        Row(
+            modifier = modifier
+                .padding(top = 16.dp, start = 12.dp, bottom = 8.dp, end = 8.dp)
+                .clip(RectangleShape)
+                .fillMaxSize()
                 .align(alignment = Alignment.Start)
+        ) {
+            Column {
+                FetchImage(listOfPlanets[planetCount].image)
+                Spacer(Modifier.height(8.dp))
+            }
+
+            Spacer(Modifier.width(12.dp))
+            Column(
             ) {
+                Text(
+                    text = listOfPlanets[planetCount].name,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFF176757),
+                    fontSize = 16.sp,
+                    modifier = Modifier.background(Color(0xFFE6E9FD))
+                )
+
+                Spacer(Modifier.width(8.dp))
                 Column {
-                    FetchImage(listOfPlanets[p].image)
-                    Spacer(Modifier.height(8.dp))
-                }
-
-                Spacer(Modifier.width(12.dp))
-                Column(
-                ) {
-                    Text(
-                        text = listOfPlanets[p].name,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Color(0xFF176757),
-                        fontSize = 16.sp,
-                        modifier = Modifier.background(Color(0xFFE6E9FD))
-                    )
-
-                    Spacer(Modifier.width(8.dp))
                     Column {
-                        Column {
-                            Row {
-                                Text(
-                                    text = "Distance:   ${listOfPlanets[p].distance} MKm",
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center,
-                                    color = Color(0xFF7B123C),
-                                    modifier = Modifier
-                                        .background(Color(0xFFE6E9FD))
-                                        .padding(4.dp)
-                                )
-                            }
-                            Row(
-                            ) {
-                                Text(
-                                    text = "Velocity:   ${listOfPlanets[p].velocity.toInt() * 3600} Km/hr ",
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center,
-                                    color = Color(0xFF7B123C),
-                                    modifier = Modifier
-                                        .background(Color(0xFFE6E9FD))
-                                        .padding(4.dp)
-                                )
-                            }
+                        Row {
+                            Text(
+                                text = "Distance:   ${listOfPlanets[planetCount].distance} MKm",
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                color = Color(0xFF7B123C),
+                                modifier = Modifier
+                                    .background(Color(0xFFE6E9FD))
+                                    .padding(4.dp)
+                            )
+                        }
+                        Row(
+                        ) {
+                            Text(
+                                text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600} Km/hr ",
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                color = Color(0xFF7B123C),
+                                modifier = Modifier
+                                    .background(Color(0xFFE6E9FD))
+                                    .padding(4.dp)
+                            )
                         }
                     }
                 }
             }
         }
+    }
 }
 
 
@@ -136,7 +137,7 @@ fun PlanetsCardPreview() {
                     description = "Venus is the second planet from the Sun and is the second brightest object in the night sky after the Moon. Named after the Roman goddess of love and beauty, Venus is the second largest terrestrial planet and is sometimes referred to as the Earth’s sister planet due the their similar size and mass. The surface of the planet is obscured by an opaque layer of clouds made up of sulphuric acid."
                 )
             ),
-            p = 1
+            planetCount = 1
         )
     }
 }

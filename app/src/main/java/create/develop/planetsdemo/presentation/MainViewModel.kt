@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel() : ViewModel() {
 
-    private val fetchPlanets : FetchPlanets = FetchPlanetsService()
+    private val fetchPlanets: FetchPlanets = FetchPlanetsService()
     private val _state = MutableStateFlow<PlanetsUIState>(PlanetsUIState(emptyList()))
     val state = _state.asStateFlow()
 

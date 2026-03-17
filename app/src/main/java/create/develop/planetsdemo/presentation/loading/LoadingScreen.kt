@@ -1,16 +1,15 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsdemo.presentation.loading
 
-
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import create.develop.planetsdemo.data.Planet
+import create.develop.planetsdemo.presentation.MainViewModel
+import create.develop.planetsdemo.presentation.PlanetsScreenContent
 
 @Composable
-fun PlanetsScreen(
+fun LoadingScreen(
     modifier: Modifier = Modifier,
     viewModel: MainViewModel = MainViewModel()
 ) {
@@ -21,20 +20,8 @@ fun PlanetsScreen(
     )
 }
 
-@Composable
-fun PlanetsScreenContent(
-    modifier: Modifier = Modifier,
-    listOfPlanets: List<Planet>
-) {
-    LazyColumn() {
-        items(listOfPlanets.size) { p ->
-            PlanetsCard(modifier, listOfPlanets, p)
-        }
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
-fun PlanetsScreenContentPreview() {
-    PlanetsScreen()
+fun LScreenContentPreview() {
+    LoadingScreen()
 }
