@@ -1,10 +1,13 @@
 package create.develop.planetsdemo.data.sealedapproach
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class SealedPlanetsInfoItem(
-    val description: String,
-    val distance: String,
-    val image: String,
-    val name: String,
-    val position: String,
-    val velocity: String
+    val position : String,
+    val  name : String,
+    val velocity : String,
+    val distance : String,
+    val image : String,
+    val description : String
 )

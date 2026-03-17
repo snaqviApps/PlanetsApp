@@ -27,13 +27,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import create.develop.planetsdemo.R
-import create.develop.planetsdemo.data.Planet
+import create.develop.planetsdemo.data.sealedapproach.SealedPlanetsInfoItem
 import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
 
 @Composable
 fun PlanetsCard(
     modifier: Modifier,
-    listOfPlanets: List<Planet>,
+    listOfPlanets: List<SealedPlanetsInfoItem>,
     planetCount: Int
 ) {
     Card(
@@ -82,7 +82,7 @@ fun PlanetsCard(
                         Row(
                         ) {
                             Text(
-                                text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600} Km/hr ",
+                                text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600 - (1000)} Km/hr ",
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.Center,
@@ -119,17 +119,16 @@ fun PlanetsCardPreview() {
         PlanetsCard(
             Modifier,
             listOfPlanets = listOf(
-                Planet(
+                SealedPlanetsInfoItem(
                     position = "1",
                     name = "Mercury",
                     velocity = "47",
                     distance = "58",
                     image = "https://space-facts.com/wp-content/uploads/mercury-transparent.png",
                     description = "Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016.",
-
-                    )
+                )
             ),
-            1
+            0
         )
     }
 }
